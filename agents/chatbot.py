@@ -1,10 +1,12 @@
 from agno.agent import Agent
-from agno.models.google import Gemini
+from agno.models.openrouter import OpenRouter
 
 from utils.settings import settings
 from models.chatbot_model import ChatbotModel
-from database.postgres import db
+from agno.db.in_memory import InMemoryDb
 
+
+db = InMemoryDb()
 
 chatbot = Agent(
     name="Chatbot Agent",
@@ -16,9 +18,9 @@ chatbot = Agent(
         more information than what is asked. Also ensure that you are
         polite and respectful in your tone, even when disagreeing.
     ''',
-    model=Gemini(
-        id="gemini-2.5-flash",
-        api_key=settings.GEMINI_API_KEY
+    model=OpenRouter(
+        id="google/gemini-2.5-flash",
+        api_key=settings.OPENROUTER_API_KEY
     ),
     output_schema=ChatbotModel,
     db=db,

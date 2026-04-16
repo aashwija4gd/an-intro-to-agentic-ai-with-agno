@@ -17,3 +17,6 @@ dependencies = [
     "ruff>=0.15.9",
     "sqlalchemy>=2.0.49",
 ]
+
+[tool.setuptools]
+packages = ["agents", "cookbook", "database", "models", "samples", "utils"]

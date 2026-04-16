@@ -2,14 +2,14 @@ from agents.chatbot import chatbot
 
 def run_chatbot_workflow():
     response = chatbot.run(
-        input="I am Heisenberg. What is your name?"
+        input="Hi! I'm Aashwija. What is your name?"
     )
     print(response.content)
 
-    response = chatbot.run(input="Say my name.")
+    response = chatbot.run(input="Do you know the meaning of my name?")
     print(response.content)
 
-    response = chatbot.run(input="You're goddamn right.")
+    response = chatbot.run(input="You are not helping me at all. This is stupd.")
     print(response.content)
 
 run_chatbot_workflow()
